@@ -40,7 +40,7 @@ def Signup(req):
         response = {"token": token.key,
                     "user": serialized_data.data, "profile": profile_serializer.data}
         return Response(response, status=status.HTTP_201_CREATED)
-    return Response(serialized_data.error, status=status.HTTP_406_NOT_ACCEPTABLE)
+    return Response(serialized_data.errors, status=status.HTTP_406_NOT_ACCEPTABLE)
 
 
 @api_view(["POST"])
