@@ -10,4 +10,5 @@ urlpatterns = [
     path("login/", views.Login, name="Login"),
     path("contactcreation/", views.CreateContact, name="CreateContact"),
     path("editprofile", views.EditProfile, name="EditProfile"),
+    path("", views.ListApi, name="ListApi"),
 ]

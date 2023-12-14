@@ -11,6 +11,13 @@ from .pusher import pusher_client
 from django.shortcuts import get_object_or_404, get_list_or_404
 
 
+
+
+@api_view(["GET"])
+def ListApi(req):
+    urls = ("signup/","chat","users","message","contact","login","contactcreation","editprofile",)
+    return Response(urls)
+
 @api_view(['POST'])
 def Signup(req):
     serialized_data = User_serializer(data=req.data)
