@@ -38,7 +38,7 @@ def Signup(req):
             profile_serializer.save()
         token = Token.objects.create(user=user)
         response = {"token": token.key,
-                    "user": serialized_data.data, "profile": profile_data}
+                    "user": serialized_data.data, "profile": profile_serializer.data}
         return Response(response, status=status.HTTP_201_CREATED)
     return Response(serialized_data.error_messages, status=status.HTTP_406_NOT_ACCEPTABLE)
 
