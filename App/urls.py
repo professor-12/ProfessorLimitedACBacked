@@ -23,4 +23,4 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("Project.urls"))
-]+staticfiles_urlpatterns()
+]+static("media/",document_root=settings.MEDIA_ROOT)+staticfiles_urlpatterns()
